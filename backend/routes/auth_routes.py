@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 
-from services.auth_service import (
+from backend.services.auth_service import (
     create_user,
     get_user_by_email
 )

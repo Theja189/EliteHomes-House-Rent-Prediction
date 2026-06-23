@@ -1,5 +1,5 @@
-from models import Prediction
-from database import db
+from backend.models import Prediction
+from backend.database import db
 from flask import Blueprint, render_template, request
 import pickle
 import pandas as pd

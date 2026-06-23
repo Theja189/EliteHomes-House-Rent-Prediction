@@ -1,5 +1,5 @@
-from models import User
-from database import db
+from backend.models import User
+from backend.database import db
 
 
 def create_user(name, email, password, role="customer"):

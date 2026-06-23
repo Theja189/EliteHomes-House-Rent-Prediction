@@ -5,8 +5,8 @@ from flask import (
     redirect
 )
 
-from models import Review
-from database import db
+from backend.models import Review
+from backend.database import db
 
 review_bp = Blueprint(
     "review",

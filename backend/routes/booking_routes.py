@@ -5,8 +5,8 @@ from flask import (
     redirect
 )
 
-from models import Property
-from services.booking_service import (
+from backend.models import Property
+from backend.services.booking_service import (
     create_booking,
     get_all_bookings
 )

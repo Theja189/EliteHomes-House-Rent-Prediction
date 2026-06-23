@@ -3,7 +3,7 @@ from flask import (
     render_template
 )
 
-from models import (
+from backend.models import (
     User,
     Property,
     Booking,

@@ -1,5 +1,5 @@
-from models import Booking
-from database import db
+from backend.models import Booking
+from backend.database import db
 
 
 def create_booking(

@@ -5,8 +5,8 @@ from flask import (
     redirect
 )
 
-from models import Property
-from database import db
+from backend.models import Property
+from backend.database import db
 
 import os
 

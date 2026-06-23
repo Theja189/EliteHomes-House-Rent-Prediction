@@ -1,15 +1,15 @@
 from flask import Flask, render_template
 
-from config import Config
-from database import db
-from models import *
+from backend.config import Config
+from backend.database import db
+from backend.models import *
 
-from routes.auth_routes import auth_bp
-from routes.property_routes import property_bp
-from routes.booking_routes import booking_bp
-from routes.dashboard_routes import dashboard_bp
-from routes.review_routes import review_bp
-from routes.prediction_routes import prediction_bp
+from backend.routes.auth_routes import auth_bp
+from backend.routes.property_routes import property_bp
+from backend.routes.booking_routes import booking_bp
+from backend.routes.dashboard_routes import dashboard_bp
+from backend.routes.review_routes import review_bp
+from backend.routes.prediction_routes import prediction_bp
 
 
 app = Flask(
