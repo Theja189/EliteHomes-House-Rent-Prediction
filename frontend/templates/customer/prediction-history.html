@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+
+<div class="text-center mb-5">
+    <h1 class="fw-bold">Prediction History</h1>
+    <p class="text-muted">
+        View all previously generated rent predictions
+    </p>
+</div>
+
+<div class="card shadow border-0">
+
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>City</th>
+                    <th>BHK</th>
+                    <th>Size (sq.ft)</th>
+                    <th>Predicted Rent</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for item in predictions %}
+
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.city }}</td>
+                    <td>{{ item.bhk }}</td>
+                    <td>{{ item.size }}</td>
+                    <td>₹ {{ item.predicted_rent }}</td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}

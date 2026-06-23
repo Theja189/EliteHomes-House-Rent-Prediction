@@ -1,0 +1,212 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f7fb;
+}
+
+/* ==========================
+   LOGIN PAGE
+========================== */
+
+.login-page{
+
+    min-height:100vh;
+}
+
+/* ==========================
+   LEFT SIDE
+========================== */
+
+.image-side{
+
+    background:url("../images/login-house.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+}
+
+.image-side::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+}
+
+.overlay-content{
+
+    position:absolute;
+
+    top:50%;
+    left:70px;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    z-index:10;
+}
+
+.overlay-content h1{
+
+    font-size:60px;
+
+    font-weight:800;
+}
+
+.overlay-content h2{
+
+    font-size:42px;
+
+    margin-top:15px;
+}
+
+.overlay-content p{
+
+    font-size:20px;
+
+    margin-top:20px;
+
+    max-width:450px;
+}
+
+/* ==========================
+   FORM SIDE
+========================== */
+
+.form-side{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+}
+
+.login-card{
+
+    width:450px;
+
+    padding:50px;
+}
+
+.login-card h2{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#111827;
+}
+
+.login-card p{
+
+    color:#6b7280;
+
+    margin-bottom:30px;
+}
+
+.login-card label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+}
+
+.form-control{
+
+    height:60px;
+
+    border-radius:15px;
+
+    border:2px solid #e5e7eb;
+}
+
+.form-control:focus{
+
+    border-color:#6d5dfc;
+
+    box-shadow:
+    0 0 0 4px rgba(109,93,252,.15);
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.login-btn{
+
+    height:60px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:linear-gradient(
+    135deg,
+    #4f46e5,
+    #8b5cf6
+    );
+}
+
+.login-btn:hover{
+
+    color:white;
+
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   REGISTER LINK
+========================== */
+
+.register-link{
+
+    text-align:center;
+
+    margin-top:25px;
+}
+
+.register-link a{
+
+    text-decoration:none;
+
+    color:#6d5dfc;
+
+    font-weight:700;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:992px){
+
+    .image-side{
+        display:none;
+    }
+
+    .login-card{
+        width:100%;
+        padding:30px;
+    }
+}

@@ -1,0 +1,382 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid px-0 py-0 predict-page">    
+<!-- TOP IMAGE -->
+
+<div class="prediction-banner">
+
+    <img src="{{ url_for('static', filename='images/predict-banner.jpg') }}"
+         alt="Luxury Property">
+
+    <!-- LEFT CONTENT -->
+
+    <div class="banner-content">
+
+        <h1>
+            <span class="elite">Elite</span><span class="homes">Homes</span>
+        </h1>
+
+        <h3>Property Rent Predictor</h3>
+
+        <div class="banner-line"></div>
+
+        <p>
+            Get accurate monthly rent predictions
+            based on property details and market insights.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- FORM CARD -->
+
+<div class="card prediction-card border-0">
+
+    <!-- HEADER -->
+
+    <div class="form-header">
+
+        <div class="form-icon">
+            <i class="bi bi-house-heart-fill"></i>
+        </div>
+
+        <div class="form-title">
+
+            <h2>Property Details</h2>
+
+            <p>
+                Provide accurate information to get the best rent prediction
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr class="form-divider">
+
+    <form method="POST">
+
+    <div class="row g-4">
+
+<!-- ROW 1 -->
+
+    <div class="col-md-4">
+        <label class="form-label">
+            <i class="bi bi-house-fill"></i>
+            Type
+        </label>
+
+
+        <select class="form-select" name="building_type" required>
+            <option value="Apartment">Apartment</option>
+            <option value="Condo">Condo</option>
+            <option value="House">House</option>
+            <option value="Land">Land</option>
+            <option value="Office">Office</option>
+            <option value="Single Family">Single Family</option>
+        </select>
+
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">
+            <i class="bi bi-calendar2-week-fill"></i>
+            Year Built
+        </label>
+        <input
+            type="number"
+            name="year_built"
+            class="form-control"
+            placeholder="2020"
+            required>
+    </div>
+
+
+
+    <div class="col-md-4">
+        <label class="form-label">
+            <i class="bi bi-building-fill-up"></i>
+            Floor
+        </label>
+
+        <select class="form-select" name="floor">
+
+            <optgroup label="Ground Floor">
+                <option value="Ground out of 1">Ground Floor</option>
+            </optgroup>
+
+            <optgroup label="Low Rise">
+                <option value="1 out of 3">1 out of 3</option>
+                <option value="2 out of 3">2 out of 3</option>
+                <option value="3 out of 3">3 out of 3</option>
+
+                <option value="1 out of 5">1 out of 5</option>
+                <option value="3 out of 5">3 out of 5</option>
+                <option value="5 out of 5">5 out of 5</option>
+            </optgroup>
+
+            <optgroup label="Mid Rise">
+                <option value="1 out of 10">1 out of 10</option>
+                <option value="5 out of 10">5 out of 10</option>
+                <option value="10 out of 10">10 out of 10</option>
+
+                <option value="1 out of 15">1 out of 15</option>
+                <option value="7 out of 15">7 out of 15</option>
+                <option value="15 out of 15">15 out of 15</option>
+            </optgroup>
+
+            <optgroup label="High Rise">
+                <option value="1 out of 20">1 out of 20</option>
+                <option value="5 out of 20">5 out of 20</option>
+                <option value="10 out of 20">10 out of 20</option>
+                <option value="15 out of 20">15 out of 20</option>
+                <option value="20 out of 20">20 out of 20</option>
+            </optgroup>
+
+        </select>
+    </div>
+
+
+        
+
+        <!-- ROW 2 -->
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-house-door-fill"></i>
+                BHK
+            </label>
+
+            <select class="form-select" name="bhk">
+                <option value="1">1 BHK</option>
+                <option value="2">2 BHK</option>
+                <option value="3">3 BHK</option>
+                <option value="4">4 BHK</option>
+                <option value="5">5 BHK</option>
+            </select>
+
+        </div>
+
+        <div class="col-md-4">
+                <label class="form-label">
+                    <i class="bi bi-rulers"></i>
+                    Property Size
+                </label>
+
+                <input
+                    type="number"
+                    name="size"
+                    class="form-control"
+                    placeholder="Enter Area in sq.ft"
+                    required>
+                </div>
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-droplet-fill"></i>
+                Bathrooms
+            </label>
+
+            <select class="form-select" name="bathroom">
+                <option value="1">1 Bathroom</option>
+                <option value="2">2 Bathrooms</option>
+                <option value="3">3 Bathrooms</option>
+                <option value="4">4 Bathrooms</option>
+                <option value="5">5 Bathrooms</option>
+            </select>
+
+        </div>
+
+        <!-- ROW 3 -->
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-grid-3x3-gap-fill"></i>
+                Area Type
+            </label>
+
+            <select class="form-select" name="area_type">
+                <option value="Built Area">Built Area</option>
+                <option value="Carpet Area">Carpet Area</option>
+                <option value="Plot Area">Plot Area</option>
+                <option value="Super Area">Super Area</option>
+            </select>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-building-fill"></i>
+                City
+            </label>
+
+            <select class="form-select" name="city">
+                <option value="Agra">Agra</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Amritsar">Amritsar</option>
+                <option value="Aurangabad">Aurangabad</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Faridabad">Faridabad</option>
+                <option value="Ghaziabad">Ghaziabad</option>
+                <option value="Gwalior">Gwalior</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Indore">Indore</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Jodhpur">Jodhpur</option>
+                <option value="Kalyan-Dombivli">Kalyan-Dombivli</option>
+                <option value="Kanpur">Kanpur</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Ludhiana">Ludhiana</option>
+                <option value="Mangalore">Mangalore</option>
+                <option value="Meerut">Meerut</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Mysore">Mysore</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Nashik">Nashik</option>
+                <option value="Navi Mumbai">Navi Mumbai</option>
+                <option value="Noida">Noida</option>
+                <option value="Patna">Patna</option>
+                <option value="Pune">Pune</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Ranchi">Ranchi</option>
+                <option value="Surat">Surat</option>
+                <option value="Thane">Thane</option>
+                <option value="Vadodara">Vadodara</option>
+                <option value="Varanasi">Varanasi</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+            </select>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-house-gear-fill"></i>
+                Furnishing
+            </label>
+
+            <select class="form-select" name="furnishing_status">
+                <option value="Furnished">Furnished</option>
+                <option value="Semi-Furnished">Semi-Furnished</option>
+                <option value="Unfurnished">Unfurnished</option>
+            </select>
+
+        </div>
+
+        <!-- ROW 4 -->
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-people-fill"></i>
+                Tenant
+            </label>
+
+            <select class="form-select" name="tenant_preferred">
+                <option value="Family">Family</option>
+                <option value="Bachelors">Bachelors</option>
+                <option value="Bachelors/Family">Bachelors/Family</option>
+            </select>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-geo-alt-fill"></i>
+                Locality
+            </label>
+
+            <input type="text"
+                   name="area_locality"
+                   class="form-control"
+                   placeholder="Enter Area Locality">
+
+        </div>
+
+        <div class="col-md-4">
+
+            <label class="form-label">
+                <i class="bi bi-telephone-fill"></i>
+                Contact
+            </label>
+
+            <select class="form-select" name="point_of_contact">
+                <option value="Contact Owner">Contact Owner</option>
+                <option value="Contact Agent">Contact Agent</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+
+        <button type="submit" class="btn predict-btn">
+            <i class="bi bi-lightning-charge-fill"></i>
+            Predict Rent
+        </button>
+
+        <br><br>
+
+        <a href="/prediction-history" class="btn btn-dark">
+           <i class="bi bi-clock-history"></i>
+            Prediction History
+        </a>
+        
+        <a href="/booking-history" class="btn btn-dark ms-2">
+            <i class="bi bi-house-check-fill"></i>
+            Booking History
+        </a>
+    </div>
+
+    {% if prediction %}
+
+    <div class="prediction-result">
+
+        <div class="result-icon">
+            <i class="bi bi-house-check-fill"></i>
+        </div>
+
+        <h5>Estimated Monthly Rent</h5>
+
+        <h2>₹ {{ prediction }}</h2>
+
+        <p>Based on current market trends</p>
+
+    </div>
+
+    {% endif %}
+
+    <div class="form-footer">
+
+        🔒 100% Secure
+        <span>•</span>
+        Quick
+        <span>•</span>
+        Accurate
+
+    </div>
+
+</form>
+
+</div>
+
+
+</div>
+
+{% endblock %}

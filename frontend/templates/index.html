@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            ELITEHOMES 
+        </span>
+
+        <h1>
+            FIND YOUR <br>
+            <span class="luxury-text">luxury</span> HOME
+        </h1>
+
+        <p>
+            Explore beautiful properties where luxury meets comfort.
+            Your perfect home is just a click away.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/properties"
+               class="btn btn-dark btn-lg me-3">
+               Explore Properties
+            </a>
+
+            <a href="/predict"
+               class="btn btn-outline-light btn-lg">
+                Predict Rent
+            </a>
+
+        </div>
+
+        <!-- HERO SEARCH BAR -->
+
+        <div class="hero-search mt-5">
+
+            <input type="text"
+                   placeholder="Location">
+
+            <select>
+                <option>Home Type</option>
+                <option>Villa</option>
+                <option>Apartment</option>
+                <option>Independent House</option>
+            </select>
+
+            <select>
+                <option>Price Range</option>
+                <option>₹10,000 - ₹20,000</option>
+                <option>₹20,000 - ₹50,000</option>
+                <option>₹50,000+</option>
+            </select>
+
+            <button>
+                🔍
+            </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="hero-stats mt-5">
+
+            <div>
+                <h3>1000+</h3>
+                <p>Properties</p>
+            </div>
+
+            <div>
+                <h3>50+</h3>
+                <p>Cities</p>
+            </div>
+
+            <div>
+                <h3>95%</h3>
+                <p>AI Accuracy</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PROPERTIES -->
+
+<section class="container my-5">
+
+    <h2 class="text-center mb-5">
+        Featured Properties
+    </h2>
+
+    <div class="row">
+
+        <!-- Property 1 -->
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <img src="{{ url_for('static', filename='images/property1.jpg') }}"
+                     class="card-img-top">
+
+                <div class="card-body">
+
+                    <h4>Luxury Villa</h4>
+
+                    <p><strong>Location:</strong> Hyderabad</p>
+
+                    <p><strong>Rent:</strong> ₹25,000 / Month</p>
+
+                   <a href="/property-details"
+                      class="btn btn-primary">
+                      View Details
+                   </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Property 2 -->
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <img src="{{ url_for('static', filename='images/property2.jpg') }}"
+                     class="card-img-top">
+
+                <div class="card-body">
+
+                    <h4>Modern Apartment</h4>
+
+                    <p><strong>Location:</strong> Bangalore</p>
+
+                    <p><strong>Rent:</strong> ₹18,000 / Month</p>
+
+                    <a href="/property-details"
+                       class="btn btn-primary">
+                       View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Property 3 -->
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <img src="{{ url_for('static', filename='images/property3.jpg') }}"
+                     class="card-img-top">
+
+                <div class="card-body">
+
+                    <h4>Family House</h4>
+
+                    <p><strong>Location:</strong> Chennai</p>
+
+                    <p><strong>Rent:</strong> ₹22,000 / Month</p>
+
+                    <a href="/property-details"
+                       class="btn btn-primary">
+                       View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT PROJECT -->
+
+<section class="bg-light py-5">
+
+    <div class="container text-center">
+
+        <h2 class="mb-4">
+            About EliteHomes
+        </h2>
+
+        <p class="lead">
+
+            EliteHomes is an AI-powered House Rent Prediction
+            and Property Management System designed to help
+            users find the perfect rental property based on
+            location, budget, BHK, furnishing status,
+            tenant preference and other property features.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="bg-dark text-white text-center py-4">
+
+    <p class="mb-0">
+        © 2026 EliteHomes | AI Powered Property Management System
+    </p>
+
+</footer>
+
+{% endblock %}

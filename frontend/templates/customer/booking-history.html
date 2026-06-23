@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Booking History</h1>
+        <p class="text-muted">
+            View all property bookings
+        </p>
+    </div>
+
+    <div class="card shadow border-0">
+
+        <div class="card-body">
+
+            <table class="table table-hover">
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer</th>
+                        <th>Property</th>
+                        <th>Contact</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for booking in bookings %}
+
+                    <tr>
+                        <td>{{ booking.id }}</td>
+                        <td>{{ booking.customer_name }}</td>
+                        <td>{{ booking.property_name }}</td>
+                        <td>{{ booking.contact }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

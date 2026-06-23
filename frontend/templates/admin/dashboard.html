@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="dashboard-hero">
+
+    <div class="container">
+
+        <div class="welcome-card">
+
+            <h1>Welcome to EliteHomes Dashboard 👋</h1>
+
+            <p>
+                Manage properties, monitor rent predictions
+                and track platform activity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="dashboard-section">
+
+    <div class="container">
+
+        <!-- STATS -->
+
+        <div class="row g-4 mb-5">
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="bi bi-house-door-fill"></i>
+
+                    <h2>{{ total_properties }}</h2>
+
+                    <p>Total Properties</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <h2>{{ total_users }}</h2>
+
+                    <p>Users</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="bi bi-graph-up-arrow"></i>
+
+                    <h2>{{ total_bookings }}</h2>
+
+                    <p>Bookings</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="bi bi-star-fill"></i>
+
+                    <h2>{{ total_reviews }}</h2>
+
+                    <p>Reviews</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="bi bi-graph-up-arrow"></i>
+
+                    <h2>{{ total_predictions }}</h2>
+
+                    <p>Predictions</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card p-4 shadow-sm text-center">
+
+            <h3>Add Property</h3>
+
+            <p>
+               Upload new properties into the system
+            </p>
+
+            <a href="/add-property"
+               class="btn btn-primary">
+
+               Add Property
+
+            </a>
+
+        </div>
+        
+        <div class="chart-card">
+
+            <h3>Prediction Analytics</h3>
+
+            <canvas id="predictionChart"></canvas>
+
+        </div>
+
+        <!-- RECENT BOOKINGS -->
+
+        <div class="activity-card mb-5">
+
+            <h3>Recent Bookings</h3>
+
+            <ul>
+
+                {% for booking in recent_bookings %}
+
+            <li>
+                👤 {{ booking.customer_name }}
+                booked
+                🏠 {{ booking.property_name }}
+            </li>
+
+           {% endfor %}
+
+            </ul>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="action-card">
+
+            <h3>Quick Actions</h3>
+
+            <div class="action-buttons">
+
+                <a href="/properties" class="action-btn">
+                    View Listings
+                </a>
+
+                <a href="/predict" class="action-btn">
+                    Predict Rent
+                </a>
+
+                <a href="/reviews" class="action-btn">
+                    View Reviews
+                </a>
+
+                <a href="/" class="action-btn">
+                    Back Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script
+src="{{ url_for('static', filename='js/dashboard-chart.js') }}">
+</script>
+
+{% endblock %}
